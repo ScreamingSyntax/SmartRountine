@@ -5,6 +5,25 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Column(
+        children: [
+          GridView(
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 1, childAspectRatio: 1, crossAxisSpacing: 1),
+            children: [
+              GridTileBar(
+                leading: GridTileBar(
+                  backgroundColor: Colors.black45,
+                  leading: Text("Get"),
+                  title: Text("This is title"),
+                ),
+              )
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
