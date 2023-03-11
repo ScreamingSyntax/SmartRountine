@@ -10,9 +10,9 @@ class HomePage extends StatelessWidget {
         children: [
           GridView(
             shrinkWrap: true,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 1, childAspectRatio: 1, crossAxisSpacing: 1),
-            children: [
+            children: const [
               GridTileBar(
                 leading: GridTileBar(
                   backgroundColor: Colors.black45,

@@ -4,28 +4,29 @@ class MyTextFormFieldDecoration extends InputDecoration {
   MyTextFormFieldDecoration(
       {required String hintText,
       required IconData iconData,
-      required Color focusedColor,
-      required Color enabledColor})
+      required BuildContext context})
       : super(
             isDense: true,
+            fillColor: Theme.of(context).cardColor,
             prefixIcon: Icon(iconData),
             hintText: hintText,
             helperText: " ",
+            filled: true,
             // errorText: "Nae Nigga",
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(color: Colors.red, width: 1),
+              borderSide: const BorderSide(color: Colors.red, width: 2),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(color: Colors.red, width: 1),
+              borderSide: const BorderSide(color: Colors.red, width: 2),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: focusedColor, width: 1),
+              borderSide: const BorderSide(color: Colors.transparent, width: 2),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: enabledColor, width: 1),
+              borderSide: const BorderSide(color: Colors.transparent, width: 2),
             ));
 }

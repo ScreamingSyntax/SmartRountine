@@ -19,9 +19,9 @@ class MyApp extends StatelessWidget {
       darkTheme: MyThemes.darkTheme(context),
       // initialRoute: MyRoutes.firstPage,
       routes: {
-        MyRoutes.firstPage: (context) => FirstPage(),
-        MyRoutes.loginPage: (context) => LoginPage(),
-        MyRoutes.signUpPage: (context) => SignUpPage(),
+        MyRoutes.firstPage: (context) => const FirstPage(),
+        MyRoutes.loginPage: (context) => const LoginPage(),
+        MyRoutes.signUpPage: (context) => const SignUpPage(),
         MyRoutes.homePage: (context) => const HomePage(),
         MyRoutes.routinePage: (context) => const RoutinePage()
       },

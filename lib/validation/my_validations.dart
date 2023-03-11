@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Validation {
   final int minLength;
   final int maxLength;
