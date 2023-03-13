@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:routine_app/pages/login_page.dart';
 
 class MyTextFormFieldDecoration extends InputDecoration {
-  MyTextFormFieldDecoration(
-      {required String hintText,
-      required IconData iconData,
-      required BuildContext context})
-      : super(
-            isDense: true,
+  MyTextFormFieldDecoration({
+    required String hintText,
+    required IconData iconData,
+    required BuildContext context,
+    IconData? suffixIcon,
+  }) : super(
+            // isDense: true,
             fillColor: Theme.of(context).cardColor,
-            prefixIcon: Icon(iconData),
+            prefixIcon: Icon(
+              iconData,
+            ),
             hintText: hintText,
             helperText: " ",
+            suffixIcon: suffixIcon != null ? (Icon(suffixIcon)) : null,
             filled: true,
             // errorText: "Nae Nigga",
             focusedErrorBorder: OutlineInputBorder(

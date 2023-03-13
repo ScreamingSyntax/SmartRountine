@@ -1,0 +1,99 @@
+{
+    "Sunday": {
+     "Routine1": 
+     {
+       "Teacher Name": "Ms. Engina Ghimire",
+       "Class-Type": "Lecture",
+       "Class": "LT - 01 Guild Hall",
+       "Timing": "8:30 AM - 10:00 AM",
+       "Subject": "Professional Issues,Ethics and Computer Law"
+     },
+     "Routine2": {
+       "Teacher Name": "Mr. Bikram Poudel",
+       "Class-Type": "Lecture",
+       "Class": "LT - 01 Guild Hall",
+       "Timing": "10:30 - 12:00 PM",
+       "Subject": "Advanced Programming and Technologies"
+     }
+   },
+   "Monday": {
+     "Routine1": {
+       "Teacher Name": "Mr. Projesh Basnet",
+       "Class-Type": "Lecture",
+       "Class": "LT - 02 Royal Albert Hall",
+       "Timing": "08:30 AM - 10:00 AM",
+       "Subject": "Smart Data Discovery"
+     },
+     "Routine2": {
+       "Teacher Name": "Mr. Pratik Sedhain",
+       "Class-Type": "Lecture",
+       "Class": "LT - 02 Royal Albert Hall",
+       "Timing": "10:30 AM - 12:00 PM",
+       "Subject": "Software Engineering"
+     }
+   },
+   "Tuesday": {
+     "Routine1": {
+       "Teacher Name": "Ms. Engina Ghimire",
+       "Class-Type": "Tutorial",
+       "Class": "Tr-04 Sunkoshi",
+       "Timing": "8:30 AM - 10:00 AM",
+       "Subject": "Professional Issues,Ethics and Computer Law"
+     },
+     "Routine2": {
+       "Teacher Name": "Mr. Bikram Poudel",
+       "Class-Type": "Tutorial",
+       "Class": "Tr-04 Sunkoshi",
+       "Timing": "10:30 AM - 12:00 PM",
+       "Subject": "Advanced Programming and Technologies"
+     }
+   },
+   "Wednesday": {
+     "Routine1": {
+       "Teacher Name": "Mr. Projesh Basnet",
+       "Class-Type": "Tutorial",
+       "Class": "Tr-04 Sunkoshi",
+       "Timing": "12:30 PM -02:00 PM",
+       "Subject": "Smart Data Discovery"
+     },
+     "Routine2": {
+       "Teacher Name": "Mr. Pratik Sedhain",
+       "Class-Type": "Tutorial",
+       "Class": "Tr-04 Sunkoshi",
+       "Timing": "02:30 PM -4:00 PM",
+       "Subject": "Software Engineering"
+     }
+   },
+   "Thursday": {
+     "Routine1": {
+       "Teacher Name": "Ms. Engina Ghimire",
+       "Class-Type": "Workshop",
+       "Class": "Tr-04 Sunkoshi",
+       "Timing": "8:30 AM - 10:00 AM",
+       "Subject": "Professional Issues,Ethics and Computer Law"
+     },
+     "Routine2": {
+       "Teacher Name": "Mr. Bikram Poudel",
+       "Class-Type": "Workshop",
+       "Class": "Tr-04 Sunkoshi",
+       "Timing": "10:30 AM - 12:00 PM",
+       "Subject": "Advanced Programming and Technologies"
+     }
+   },
+   "Friday": {
+     "Routine1": {
+       "Teacher Name": "Mr. Projesh Basnet",
+       "Class-Type": "Workshop",
+       "Class": "Tr-04 Sunkoshi",
+       "Timing": "12:30 PM -02:00 PM",
+       "Subject": "Smart Data Discovery"
+     },
+     "Routine2": {
+       "Teacher Name": "Mr. Pratik Sedhain",
+       "Class-Type": "Workshop",
+       "Class": "Tr-04 Sunkoshi",
+       "Timing": "02:30 PM -4:00 PM",
+       "Subject": "Software Engineering"
+     }
+   }
+ }

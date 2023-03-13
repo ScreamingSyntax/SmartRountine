@@ -23,48 +23,48 @@ class _SignUpPageState extends State<SignUpPage> {
   void _validation(BuildContext context) {
     if (_formKey.currentState!.validate()) {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const LoginPage()));
+          context, MaterialPageRoute(builder: (context) => LoginPage()));
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
           // padding: const EdgeInsets.all(20.0),
           constraints: const BoxConstraints.expand(),
           child: Column(
             // verticalDirection: VerticalDirection.up,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
             // ignore: prefer_const_literals_to_create_immutables
             children: <Widget>[
               const HeadingContext(),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.all(30.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        "Sign Up"
-                            .text
-                            .color(Theme.of(context).colorScheme.onSecondary)
-                            .bold
-                            .xl5
-                            .make(),
-                        "Please Enter Valid Credentials"
-                            .text
-                            .textStyle(context.captionStyle)
-                            .lg
-                            .make(),
-                        _textFields(context),
-                        _lowerPage(context),
-                      ],
-                    ),
-                  ),
+              Column(
+                children: [
+                  "Sign Up"
+                      .text
+                      .color(Theme.of(context).colorScheme.onSecondary)
+                      .bold
+                      .xl5
+                      .make(),
+                  "Please Enter Valid Credentials"
+                      .text
+                      .textStyle(context.captionStyle)
+                      .lg
+                      .make(),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _textFields(context),
+                    _lowerPage(context),
+                  ],
                 ),
               ),
               const BottomContent()
@@ -128,40 +128,75 @@ class _SignUpPageState extends State<SignUpPage> {
                   context: context),
             ),
             TextFormField(
-              onChanged: (value) {
-                password1 = value;
-                setState(() {});
-              },
-              validator: (value) {
-                PasswordValidation ac = PasswordValidation(
-                  value: value,
-                  validationType: "Password",
-                  minLength: 7,
-                  maxLength: 20,
-                );
-                String? error = ac.empty();
-                if (error != null) {
-                  return error;
-                }
-                error = ac.length();
-                if (error != null) {
-                  return error;
-                }
-                error = ac.passwordSecurity();
-                if (error != null) {
-                  return error;
-                }
-                if (password2 != value) {
-                  return "${ac.validationType} do not match";
-                }
-                return null;
-              },
-              decoration: MyTextFormFieldDecoration(
-                  hintText: "Enter Password",
-                  iconData: Icons.password_outlined,
-                  context: context),
-            ),
+                onChanged: (value) {
+                  password1 = value;
+                  setState(() {});
+                },
+                validator: (value) {
+                  PasswordValidation ac = PasswordValidation(
+                    value: value,
+                    validationType: "Password",
+                    minLength: 7,
+                    maxLength: 20,
+                  );
+                  String? error = ac.empty();
+                  if (error != null) {
+                    return error;
+                  }
+                  error = ac.length();
+                  if (error != null) {
+                    return error;
+                  }
+                  error = ac.passwordSecurity();
+                  if (error != null) {
+                    return error;
+                  }
+                  if (password2 != value) {
+                    return "${ac.validationType} do not match";
+                  }
+                  return null;
+                },
+                obscureText: LoginPage.obscureText,
+                decoration: InputDecoration(
+                    // isDense: true,
+                    fillColor: Theme.of(context).cardColor,
+                    prefixIcon: Icon(
+                      Icons.password,
+                    ),
+                    hintText: "Enter Password",
+                    helperText: " ",
+                    filled: true,
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        Icons.remove_red_eye_outlined,
+                        color: Colors.blue,
+                      ),
+                      onPressed: () {
+                        LoginPage.obscureText = !LoginPage.obscureText;
+                        setState(() {});
+                      },
+                    ),
+                    // errorText: "Nae Nigga",
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(color: Colors.red, width: 2),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(color: Colors.red, width: 2),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide:
+                          const BorderSide(color: Colors.transparent, width: 2),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide:
+                          const BorderSide(color: Colors.transparent, width: 2),
+                    ))),
             TextFormField(
+              obscureText: LoginPage.obscureText,
               onChanged: (value) {
                 password2 = value;
                 setState(() {});
@@ -189,10 +224,41 @@ class _SignUpPageState extends State<SignUpPage> {
                 }
                 return null;
               },
-              decoration: MyTextFormFieldDecoration(
-                  hintText: "Re-Enter Password",
-                  iconData: Icons.password_outlined,
-                  context: context),
+              decoration: InputDecoration(
+                  // isDense: true,
+                  fillColor: Theme.of(context).cardColor,
+                  prefixIcon: Icon(
+                    Icons.password,
+                  ),
+                  hintText: "Enter Password",
+                  helperText: " ",
+                  filled: true,
+                  suffixIcon: IconButton(
+                    icon: Icon(Icons.remove_red_eye_outlined),
+                    onPressed: () {
+                      LoginPage.obscureText = !LoginPage.obscureText;
+                      setState(() {});
+                    },
+                  ),
+                  // errorText: "Nae Nigga",
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(color: Colors.red, width: 2),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(color: Colors.red, width: 2),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide:
+                        const BorderSide(color: Colors.transparent, width: 2),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide:
+                        const BorderSide(color: Colors.transparent, width: 2),
+                  )),
             ),
           ],
         ),
@@ -200,8 +266,35 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget _lowerPage(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
+          ElevatedButton(
+            onPressed: () => _validation(context),
+            style: ButtonStyle(
+              fixedSize: MaterialStateProperty.all(
+                Size(
+                  MediaQuery.of(context).size.width /
+                      0.001, // 80% of screen width
+                  MediaQuery.of(context).size.height *
+                      0.07, // // 8% of screen height
+                ),
+              ),
+              shape: MaterialStateProperty.all(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+            ),
+            child: Text(
+              "Sign Up",
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.width * 0.04,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               "Already Have an "
                   .text
@@ -217,30 +310,6 @@ class _SignUpPageState extends State<SignUpPage> {
                 Navigator.pushNamed(context, MyRoutes.loginPage);
               })
             ],
-          ),
-          ElevatedButton(
-            onPressed: () => _validation(context),
-            style: ButtonStyle(
-              fixedSize: MaterialStateProperty.all(
-                Size(
-                  MediaQuery.of(context).size.width *
-                      0.3, // 80% of screen width
-                  MediaQuery.of(context).size.height *
-                      0.04, // 8% of screen height
-                ),
-              ),
-              shape: MaterialStateProperty.all(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
-            ),
-            child: Text(
-              "Sign Up",
-              style: TextStyle(
-                  fontSize: MediaQuery.of(context).size.width * 0.04,
-                  fontWeight: FontWeight.bold),
-            ),
           ),
         ],
       );

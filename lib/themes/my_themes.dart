@@ -12,7 +12,7 @@ class MyThemes {
         fontFamily: GoogleFonts.poppins().fontFamily,
         colorScheme: ColorScheme(
           brightness: Brightness.light,
-          primary: Colors.blue, //For Buttons
+          primary: Color(0xff1E26E9), //For Buttons
           // ignore: use_full_hex_values_for_flutter_colors
           onPrimary: creamishColor, //For Text On Buttons
           secondary: creamishColor,
@@ -25,8 +25,8 @@ class MyThemes {
           onSurface: const Color(0xff403b58),
           //For Text on the Surface
         ),
-        cardColor: const Color(
-            0xffE0E6F3), // I'll use this for cards, containers and text form field fill color
+        cardColor: Colors.grey[
+            50], // I'll use this for cards, containers and text form field fill color
         scaffoldBackgroundColor: Colors.white, //For Background Colors
       );
   static darkTheme(BuildContext context) => ThemeData(

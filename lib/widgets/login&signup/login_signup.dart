@@ -9,11 +9,20 @@ class HeadingContext extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image.asset(
-          "assets/images/Group 22 (1).png",
-          height: MediaQuery.of(context).size.height * 0.19,
-          alignment: Alignment.topLeft,
-          fit: BoxFit.scaleDown,
+        SizedBox(
+          height: 10,
+        ),
+        Container(
+          // width: 150,
+          alignment: Alignment.center,
+          child: Image.asset(
+            "assets/images/iic.png",
+            filterQuality: FilterQuality.high,
+            scale: 3,
+
+            // alignment: Alignment.topLeft,
+            // fit: BoxFit.scaleDown,
+          ),
         ),
       ],
     );
